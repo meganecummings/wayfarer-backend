@@ -30,6 +30,7 @@ app.use(session({
     saveUninitialized: false
 }));
 
+
 const whitelist = ['https://meganecummings.github.io/wayfarer/', 'https://meganecummings.github.io/']
 const corsOptions = {
   origin: function (origin, callback) {

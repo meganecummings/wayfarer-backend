@@ -20,5 +20,6 @@
         "mongoose": "^5.6.10",
         "react-router-dom": "^5.0.1"
     },
-    "devDependencies": {}
+    "devDependencies": {},
+    "Access-Control-Allow-Origin": "*"
 }
