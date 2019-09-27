@@ -30,11 +30,20 @@ app.use(session({
     saveUninitialized: false
 }));
 
+const whitelist = ['https://meganecummings.github.io/wayfarer/', 'https://meganecummings.github.io/']
 const corsOptions = {
-    origin: ['https://meganecummings.github.io/wayfarer/'],
-    credentials: true,
-    optionsSuccessStatus: 200
+  origin: function (origin, callback) {
+    if (whitelist.indexOf(origin) !== -1) {
+      callback(null, true)
+    } else {
+      callback(new Error('Not allowed by CORS'))
+    }
+  }, 
+  credentials: true,
+  optionsSuccessStatus: 200
 }
+
+// Then pass them to cors:
 app.use(cors(corsOptions));
 
   // --------------------- ROUTES --------------------- //
