@@ -20,13 +20,13 @@ app.use(session({
 const corsOptions = {
   origin: ["https://meganecummings.github.io"],
   preflightContinue: true,
-  credentials: include,
+  credentials: false,
   header: true,
   preflightContinue: true,
   optionsSuccessStatus: 200
 };
 
-
+app.options('*', cors());
 app.use(cors(corsOptions));
 
   // --------------------- ROUTES --------------------- //
