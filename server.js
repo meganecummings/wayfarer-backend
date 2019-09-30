@@ -23,7 +23,8 @@ const corsOptions = {
   preflight: true,
   optionsSuccessStatus: 200,
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  preflightContinue: true
+  preflightContinue: true,
+  allowedHeaders: ["Content-Type", "Authorization"]
 };
 
 // app.options('*', cors()) 
