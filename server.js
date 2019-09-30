@@ -19,7 +19,6 @@ app.use(session({
 
 const corsOptions = {
   origin: ["https://meganecummings.github.io"],
-  credentials: true,
   preflightContinue: true,
   header: true,
   optionsSuccessStatus: 200
