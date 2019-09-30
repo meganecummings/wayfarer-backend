@@ -26,13 +26,6 @@ const corsOptions = {
   optionsSuccessStatus: 200
 };
 
-const url = "https://meganecummings.github.io";
-
-fetch(url)
-.then(response => response.text())
-.then(contents => console.log(contents))
-.catch(() => console.log("Can’t access " + url + " response. Blocked by browser?"))
-
 app.use(cors(corsOptions));
 
   // --------------------- ROUTES --------------------- //
