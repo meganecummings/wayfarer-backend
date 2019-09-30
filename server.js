@@ -27,14 +27,8 @@ const corsOptions = {
 
 
 app.use(cors(corsOptions));
-// app.options('*', cors()) 
 
   // --------------------- ROUTES --------------------- //
-
-//  Get Root Route
-app.get('/', (req, res) => {
-    res.send('<h1>Welcome to WAYFARER</h1>');
-});
 
 // API Routes
 app.use('/api/v1/auth', routes.auth);
