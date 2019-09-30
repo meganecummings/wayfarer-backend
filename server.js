@@ -1,27 +1,13 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 const session = require('express-session');
 const cors = require('cors');
 const app = express();
 const PORT = process.env.PORT || 3001;
-require('dotenv').config();
 const routes = require('./routes');
 
 // --------------------- MIDDLEWARE --------------------- //
 
-
-// BodyParser
-//app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
-
-// Custom Logger Middleware
-app.use((req, res, next) => {
-    const url = req.url;
-    const method = req.method;
-    const requestedAt = new Date().toLocaleString();
-    console.table({ url, method, requestedAt });
-    next();
-})
 
 // User Sessions
 app.use(session({
