@@ -5,6 +5,8 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 const routes = require('./routes');
 
+
+
 // --------------------- MIDDLEWARE --------------------- //
 
 app.use(express.json());
@@ -25,6 +27,8 @@ const corsOptions = {
   preflightContinue: true,
   optionsSuccessStatus: 200
 };
+
+
 
 app.use(cors(corsOptions));
 
