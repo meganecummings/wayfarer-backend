@@ -18,20 +18,14 @@ app.use(session({
 
 
 const whitelist = ['https://meganecummings.github.io']
-const corsOptions = {
-  origin: function (origin, callback) {
-    if (whitelist.indexOf(origin) !== -1) {
-      callback(null, true)
+const corsOptionsDelegate = function (req, callback) {
+    var corsOptions;
+    if (whitelist.indexOf(req.header('Origin')) !== -1) {
+      corsOptions = { origin: true } // reflect (enable) the requested origin in the CORS response
     } else {
-      callback(new Error('Not allowed by CORS'))
+      corsOptions = { origin: false } // disable CORS for this request
     }
-  }, 
-  credentials: true,
-  preflight: true,
-  optionsSuccessStatus: 200,
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  preflightContinue: true,
-  allowedHeaders: ["Content-Type", "Authorization"]
+    callback(null, corsOptions) // callback expects two parameters: error and options
 }
 
 // app.options('*', cors()) 
