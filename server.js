@@ -29,7 +29,7 @@ const corsOptionsDelegate = function (req, callback) {
 }
 
 // app.options('*', cors()) 
-app.use(cors(corsOptions));
+app.use(cors(corsOptionsDelegate));
 
   // --------------------- ROUTES --------------------- //
 
