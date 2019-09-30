@@ -21,12 +21,14 @@ const corsOptions = {
   origin: ["https://meganecummings.github.io"],
   credentials: true,
   preflight: true,
-  optionsSuccessStatus: 200
+  optionsSuccessStatus: 200,
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  preflightContinue: false
 };
 
+app.options('*', cors())
 app.use(cors(corsOptions));
 
-app.options('*', cors())
 
 // const whitelist = ['https://meganecummings.github.io/wayfarer/', 'https://meganecummings.github.io']
 // const corsOptions = {
