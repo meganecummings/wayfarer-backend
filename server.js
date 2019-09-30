@@ -20,6 +20,7 @@ app.use(session({
 const corsOptions = {
   origin: ["https://meganecummings.github.io"],
   preflightContinue: true,
+  credentials: include,
   header: true,
   optionsSuccessStatus: 200
 };
