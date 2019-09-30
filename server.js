@@ -23,10 +23,10 @@ const corsOptions = {
   preflight: true,
   optionsSuccessStatus: 200,
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  preflightContinue: false
+  preflightContinue: true
 };
 
-app.options('*', cors())
+// app.options('*', cors()) 
 app.use(cors(corsOptions));
 
 
