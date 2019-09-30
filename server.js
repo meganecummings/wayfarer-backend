@@ -22,6 +22,7 @@ const corsOptions = {
   preflightContinue: true,
   credentials: include,
   header: true,
+  preflightContinue: true,
   optionsSuccessStatus: 200
 };
 
