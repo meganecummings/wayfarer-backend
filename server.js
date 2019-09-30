@@ -17,15 +17,35 @@ app.use(session({
 }));
 
 
-const corsOptions = {
-  origin: ["https://meganecummings.github.io"],
-  credentials: true,
-  preflightContinue: true,
-  optionsSuccessStatus: 200
-};
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  next();
+});
+
+app.get('/', (req, res) => {
+  request(
+    { url: 'https://meganecummings.github.io' },
+    (error, response, body) => {
+      if (error || response.statusCode !== 200) {
+        return res.status(500).json({ type: 'error', message: err.message });
+      }
+
+      res.json(JSON.parse(body));
+    }
+  )
+});
 
 
-app.use(cors(corsOptions));
+// const corsOptions = {
+//   origin: ["https://meganecummings.github.io"],
+//   credentials: true,
+//   preflightContinue: true,
+
+//   optionsSuccessStatus: 200
+// };
+
+
+// app.use(cors(corsOptions));
 // app.options('*', cors()) 
 
   // --------------------- ROUTES --------------------- //
