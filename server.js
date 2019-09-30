@@ -17,21 +17,29 @@ app.use(session({
 }));
 
 
-const whitelist = ['https://meganecummings.github.io/wayfarer/', 'https://meganecummings.github.io/']
 const corsOptions = {
-  origin: function (origin, callback) {
-    if (whitelist.indexOf(origin) !== -1) {
-      callback(null, true)
-    } else {
-      callback(new Error('Not allowed by CORS'))
-    }
-  }, 
+  origin: ["https://meganecummings.github.io"],
   credentials: true,
   optionsSuccessStatus: 200
-}
-
-// Then pass them to cors:
+};
 app.use(cors(corsOptions));
+
+
+// const whitelist = ['https://meganecummings.github.io/wayfarer/', 'https://meganecummings.github.io']
+// const corsOptions = {
+//   origin: function (origin, callback) {
+//     if (whitelist.indexOf(origin) !== -1) {
+//       callback(null, true)
+//     } else {
+//       callback(new Error('Not allowed by CORS'))
+//     }
+//   }, 
+//   credentials: true,
+//   optionsSuccessStatus: 200
+// }
+
+// // Then pass them to cors:
+// app.use(cors(corsOptions));
 
   // --------------------- ROUTES --------------------- //
 
