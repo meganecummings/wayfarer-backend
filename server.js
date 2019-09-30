@@ -20,10 +20,13 @@ app.use(session({
 const corsOptions = {
   origin: ["https://meganecummings.github.io"],
   credentials: true,
+  preflight: true,
   optionsSuccessStatus: 200
 };
+
 app.use(cors(corsOptions));
 
+// app.options('*', cors())
 
 // const whitelist = ['https://meganecummings.github.io/wayfarer/', 'https://meganecummings.github.io']
 // const corsOptions = {
