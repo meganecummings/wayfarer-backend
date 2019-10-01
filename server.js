@@ -51,11 +51,6 @@ app.use(function(req, res, next) {
   next();
 });
 
-// app.use(function (req, response, next) {
-//   response.setheader("Access-Control-Allow-Origin", 'https://meganecummings.github.io');
-//   next();
-// });
-
 
   // --------------------- ROUTES --------------------- //
 
