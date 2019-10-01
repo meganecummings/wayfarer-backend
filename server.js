@@ -39,7 +39,10 @@ app.use(session({
 const corsOptions = {
   origin: ["https://meganecummings.github.io"],
   credentials: true,
-  optionsSuccessStatus: 200
+  optionsSuccessStatus: 200, 
+  headers: {
+    'Access-Control-Allow-Origin': '*',
+  }
 };
 
 app.use(cors(corsOptions));
@@ -48,6 +51,7 @@ app.use(cors(corsOptions));
 //   response.setheader("Access-Control-Allow-Origin", 'https://meganecummings.github.io');
 //   next();
 // });
+
 
   // --------------------- ROUTES --------------------- //
 
