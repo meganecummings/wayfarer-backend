@@ -40,17 +40,12 @@ const corsOptions = {
   origin: ["https://meganecummings.github.io"],
   credentials: true,
   optionsSuccessStatus: 200, 
-  preflight: true,
-  headers: {
-    'content-type': 'application/x-www-form-urlencoded'
-  },
   preflightContinue: true
 };
 
 app.use(cors(corsOptions));
 
 app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Accept, Authorization");
   next();
