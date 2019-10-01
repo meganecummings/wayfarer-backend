@@ -10,11 +10,9 @@ const routes = require('./routes');
 // --------------------- MIDDLEWARE --------------------- //
 
 
-// // BodyParser
-// app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.json());
-
-
+// BodyParser
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 
 // Custom Logger Middleware
