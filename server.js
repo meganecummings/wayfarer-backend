@@ -23,6 +23,7 @@ const corsOptions = {
   origin: ["https://meganecummings.github.io"],
   credentials: true,
   preflightContinue: true,
+  preflight: true,
   optionsSuccessStatus: 200
 };
 
