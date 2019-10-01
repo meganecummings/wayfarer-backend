@@ -40,8 +40,9 @@ const corsOptions = {
   origin: ["https://meganecummings.github.io"],
   credentials: true,
   optionsSuccessStatus: 200, 
+  preflight: true,
   headers: {
-    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Origin': 'https://meganecummings.github.io',
   }
 };
 
