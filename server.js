@@ -41,9 +41,7 @@ const corsOptions = {
   credentials: true,
   optionsSuccessStatus: 200, 
   preflight: true,
-  headers: {
-    'Access-Control-Allow-Origin': 'https://meganecummings.github.io',
-  }
+  headers: '*'
 };
 
 app.use(cors(corsOptions));
