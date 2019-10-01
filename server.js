@@ -42,8 +42,9 @@ const corsOptions = {
   optionsSuccessStatus: 200, 
   preflight: true,
   headers: {
-    'content-type': 'application/x-www-form-urlencoded',
-  }
+    'content-type': 'application/x-www-form-urlencoded'
+  },
+  preflightContinue: true
 };
 
 app.use(cors(corsOptions));
