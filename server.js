@@ -44,10 +44,10 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
-app.use(function (req, response, next) {
-  response.setheader("Access-Control-Allow-Origin", 'https://meganecummings.github.io');
-  next();
-});
+// app.use(function (req, response, next) {
+//   response.setheader("Access-Control-Allow-Origin", 'https://meganecummings.github.io');
+//   next();
+// });
 
   // --------------------- ROUTES --------------------- //
 
