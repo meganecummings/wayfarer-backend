@@ -51,6 +51,8 @@ app.use(function(req, res, next) {
   next();
 });
 
+app.options('*', cors())
+
 
   // --------------------- ROUTES --------------------- //
 
