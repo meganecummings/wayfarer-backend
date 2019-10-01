@@ -51,7 +51,7 @@ app.use(function(req, res, next) {
   next();
 });
 
-app.options('*', cors())
+app.options('https://meganecummings.github.io', cors())
 
 
   // --------------------- ROUTES --------------------- //
