@@ -40,7 +40,7 @@ const corsOptions = {
   origin: ["https://meganecummings.github.io"],
   credentials: true,
   optionsSuccessStatus: 200, 
-  preflightContinue: true
+  preflight: true
 };
 
 app.use(cors(corsOptions));
