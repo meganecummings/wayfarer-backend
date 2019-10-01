@@ -28,9 +28,7 @@ const corsOptions = {
   optionsSuccessStatus: 200
 };
 
-
-
-app.use(cors());
+app.use(cors(corsOptions));
 
 app.use(function (req, response, next) {
   response.setheader("Access-Control-Allow-Origin", 'https://meganecummings.github.io');
