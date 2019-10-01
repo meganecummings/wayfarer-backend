@@ -41,10 +41,19 @@ const corsOptions = {
   credentials: true,
   optionsSuccessStatus: 200, 
   preflight: true,
-  headers: '*'
+  headers: {
+    'content-type': 'application/x-www-form-urlencoded',
+  }
 };
 
 app.use(cors(corsOptions));
+
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+  next();
+});
 
 // app.use(function (req, response, next) {
 //   response.setheader("Access-Control-Allow-Origin", 'https://meganecummings.github.io');
