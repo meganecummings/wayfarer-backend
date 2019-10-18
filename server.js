@@ -9,12 +9,17 @@ const routes = require('./routes');
 
 // --------------------- MIDDLEWARE --------------------- //
 
+const corsOptions = {
+  origin: 'https://meganecummings.github.io',
+  credentials: true,
+  optionsSuccessStatus: 200, 
+  preflightContinue: true
+};
+
+app.use(cors(corsOptions));
 
 // // BodyParser
-// app.use(bodyParser.urlencoded({ extended: false }));
-// app.use(bodyParser.json());
-
-
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
 
@@ -35,27 +40,7 @@ app.use(session({
     saveUninitialized: false
 }));
 
-
-const corsOptions = {
-  origin: ["https://meganecummings.github.io"],
-  credentials: true,
-  optionsSuccessStatus: 200, 
-  preflight: true
-};
-
-app.use(cors(corsOptions));
-
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Accept, Authorization");
-  next();
-});
-
-app.options('https://meganecummings.github.io', cors())
-
-
-  // --------------------- ROUTES --------------------- //
-
+// --------------------- ROUTES --------------------- //
 
 //  Get Root Route
 app.get('/', (req, res) => {
